@@ -4,12 +4,12 @@ import { Container } from "../../Layout/Container/Container";
 
 
 
-export const Navigation = () => (
+export const Navigation = ({ list }) =>  (
     <nav>
         <Container>
             <div className="container">
-                <Gender />
-                <Category />
+                <Gender list={list} />
+                <Category list={list} />
             </div>
         </Container>
         
