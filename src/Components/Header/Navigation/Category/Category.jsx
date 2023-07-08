@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 
 
-export const Category = ({ list }) => {
+export const Category = () => {
     const  { activeGender, categories }  = useSelector(state => state.navigation)
     // const categoriesList = list.find(item => item.link === gender)
 

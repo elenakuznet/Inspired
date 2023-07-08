@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { setActiveGender } from "../../../features/navigationSlice";
 
 
-export const Navigation = ({ list }) => {
+export const Navigation = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     const gender = location.pathname.split('/')[1] || 'women';
@@ -20,8 +20,8 @@ export const Navigation = ({ list }) => {
         <nav>
             <Container>
                 <div className="container">
-                    <Gender list={list} />
-                    <Category list={list} />
+                    <Gender />
+                    <Category />
                 </div>
             </Container>
         </nav>
