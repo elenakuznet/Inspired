@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { fetchNavigation } from "./features/navigationSlice"
 import { fetchColors } from "./features/colorSlice"
 
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Root />}>
