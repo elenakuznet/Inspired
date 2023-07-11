@@ -6,10 +6,14 @@ export const fetchGoods = createAsyncThunk(
     'goods/fetchGoods',
     async gender => {
         const response = await fetch(`${GOODS_URL}?gender=${gender}`);
-        return await response.json();
+        const data = await response.json();
+        console.log(data);
+        return data;
+
+        // const response = await fetch(`${GOODS_URL}?gender=${gender}`);
+        // return await response.json();
     }
 )
-
 
 const goodsSlice = createSlice({
     name: 'goods',
@@ -18,7 +22,7 @@ const goodsSlice = createSlice({
         goodsList: [],
         error: null,
     },
-    exstraReducers: (builder) => 
+    extraReducers: (builder) => 
         builder
             .addCase(fetchGoods.pending , (state) => {
                 state.status = "loading";
