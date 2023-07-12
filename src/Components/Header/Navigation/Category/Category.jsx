@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom"
 
 export const Category = () => {
     const  { activeGender, categories }  = useSelector(state => state.navigation)
-    // const categoriesList = list.find(item => item.link === gender)
+
 
     return (
         <ul className={s.category}>
@@ -15,7 +15,7 @@ export const Category = () => {
                 <li key={item.slug} className={s.item}>
                     <NavLink 
                         className={({ isActive}) => cn(s.link, isActive && s.linkActive)} 
-                        to={`${activeGender}/${item.slug}`}>
+                        to={`/catalog/${activeGender}/${item.slug}`}>
                         {item.title}
                     </NavLink>
                 </li>
