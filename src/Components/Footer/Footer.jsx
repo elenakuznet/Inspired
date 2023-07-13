@@ -4,7 +4,7 @@ import s from "./Footer.module.scss";
 import cn from "classnames"; 
 import { useSelector } from "react-redux";
 
-export const Footer = ({list}) => {
+export const Footer = () => {
     const { genderList, categories } = useSelector(state => state.navigation);
     
         return (
