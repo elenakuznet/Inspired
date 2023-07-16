@@ -7,14 +7,18 @@ import { useEffect } from "react"
 import { fetchNavigation } from "./features/navigationSlice"
 import { fetchColors } from "./features/colorSlice"
 import { ProductPage } from "./Components/ProductPage/ProductPage"
+import { CardPage } from "./Components/CardPage/CardPage"
+import { FavoritePage } from "./Components/FavoritePage/FavoritePage"
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Root />}>
             <Route index element={<MainPage/>} />
-            <Route path="product/:id/" index element={<ProductPage />} />
-            <Route path="catalog/:gender/:category?" index element={<MainPage />} />
+            <Route path="/favorite" element={<FavoritePage />} />
+            <Route path="/card"  element={<CardPage />} />
+            <Route path="/product/:id/"  element={<ProductPage />} />
+            <Route path="/catalog/:gender/:category?" index element={<MainPage />} />
             <Route path="*" index element={<ErrorPage/>} />
         </Route>
 )
