@@ -16,9 +16,9 @@ export const Product = ({id, pic, title, price, colors}) => {
             </NavLink>
             <div className={s.row}>
                 <p className={s.price}>руб {price}</p>
-                <button className={s.favorite}>
+                <div className={s.favorite}>
                     <BtnLike id={id}/>
-                </button>
+                </div>
             </div>
             <ColorList  colors={colors}/>
 
