@@ -1,20 +1,20 @@
 import s from './Pagintaion.module.scss'
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 import { useLocation } from 'react-router-dom';
-import classNames from 'classnames';
+import cn from 'classnames';
 import { setPage } from '../../features/goodsSlice';
+import { NavLink } from 'react-router-dom';
 
 export const Pagination = () => {
     const pathname = useLocation().pathname;
     const { page, pages } = useSelector(state => state.goods);
+    console.log('page:', page );
+    console.log('pages:', pages);
     const dispatch = useDispatch();
 
     const handlePageChange = (newPage => {
         dispatch(setPage(newPage))
     }) 
-
-    
 
     const handlePrevPage = () => {
         if (page > 1) {
@@ -31,6 +31,7 @@ export const Pagination = () => {
         const paginationItems = [];
 
         let startPage = Math.max(1, page - 1);
+        console.log('startPage:', startPage);
         let endPage = Math.min(startPage + 2, pages);
 
         for (let i = startPage; i <= endPage; i++) {
@@ -38,7 +39,7 @@ export const Pagination = () => {
                 <li key={i} className={s.item}>
                     <NavLink
                     to={`${pathname}?page=${i}`}
-                    className={classNames(s.link, i=== +page ?? s.linkActive)}
+                    className={cn(s.link, i === +page ?? s.linkActive)}
                     onClick={() => handlePageChange(i)}
                     >
                     {i}
@@ -51,6 +52,7 @@ export const Pagination = () => {
     }
 
     return (
+        // page > 1 &&
         <div className={s.pagination}>
             <button 
                 className={s.arrow} 
@@ -69,5 +71,4 @@ export const Pagination = () => {
             </button>
         </div>
     )
-
 }

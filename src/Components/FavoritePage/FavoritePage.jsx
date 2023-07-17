@@ -4,12 +4,13 @@ import { useEffect } from "react";
 import { fetchCategory} from "../../features/goodsSlice";
 import { usePageFromSearchParams } from "../../hooks/usePageFromSearchParams";
 
+
 export const FavoritePage = () => {
     const dispatch = useDispatch();
 
     const favorites = useSelector(state => state.favorites);
     const page = usePageFromSearchParams(dispatch);
-    console.log('pageURL:', page)
+    // console.log(page);
 
     useEffect(() => {
         if (favorites) {
